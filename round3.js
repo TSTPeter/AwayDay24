@@ -119,7 +119,7 @@ const endGame = () => {
 
 const goToFinalScoreboard = () => {
     const player1Score = score.player1;
-    window.location.href = `finalScoreboard.html?player1Score=${player1Score}`;
+    window.location.href = `finalscoreboard.html?player1Score=${player1Score}`;
 };
 
 // Attach event listeners for button press
