@@ -5,6 +5,8 @@ window.onload = () => {
     // Show the pop-up message on load
     const popupOverlay = document.getElementById('popup-overlay');
     popupOverlay.addEventListener('click', handleFirstClick);
+    popupOverlay.addEventListener('keydown', handleFirstClick);
+    popupOverlay.addEventListener('touchstart', handleFirstClick);
 };
 
 function handleFirstClick() {
@@ -13,11 +15,6 @@ function handleFirstClick() {
 
     // Start the background music
     playBackgroundMusic();
-
-    // Prepare for the second click to start the game
-    document.addEventListener('click', startGame);
-    document.addEventListener('keydown', startGame);
-    document.addEventListener('touchstart', startGame);
 }
 
 function startGame() {
@@ -47,6 +44,10 @@ function playBackgroundMusic() {
             console.error('Background music element not found');
         }
     }
+        // Prepare for the second click to start the game
+    document.addEventListener('click', startGame);
+    document.addEventListener('keydown', startGame);
+    document.addEventListener('touchstart', startGame);
 }
 
 function countdownAndStart() {
@@ -73,7 +74,7 @@ function countdownAndStart() {
         if (countdown < 0) {
             clearInterval(interval);
             document.body.removeChild(countdownElement);
-            window.location.href = 'ROUND1.HTML';
+            window.location.href = 'round1.html';
         }
     }, 1000);
 }
